@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+  /* overflow: hidden; */
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  height: 100vh;
+}
+.slider-container{
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+.left-slide{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  top: 0;
+  left: 0;
+  transition: transform .5s ease-in-out;
+}
+.left-slide > div{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: antiquewhite;
+  text-align: center;
+}
+.left-slide h1{
+  margin: 10px;
+}
+.right-slide{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 30%;
+  width: 70%;
+  transition: transform .5s ease-in-out;
+}
+.right-slide > div{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+button{
+  background-color: #fff;
+  border: 0;
+  color: rgb(195, 195, 195);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 7px;
+  transition: .5s ease-in-out;
+}
+button:hover{
+  color: #111;
+}
+.slider-container .action-buttons button{
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  z-index: 10;
+}
+.slider-container .action-buttons .down-button{
+  transform: translateX(-100%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.slider-container .action-buttons .up-button{
+  transform: translateY(-100%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .left-slide h1{
+    margin-bottom: 5rem;
+  }
+}
